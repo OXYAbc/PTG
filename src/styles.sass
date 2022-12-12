@@ -1,1 +1,41 @@
-/* You can add global styles to this file, and also import other style files */
+$primary: #11A37F
+$primary-hover: #00a37f
+$black: #000
+$white: #fff
+$dark-grey: #2d333a
+$transparent: transparent
+
+$bg-dark: #121212
+$bg-light: $white
+$text-light-color: $white
+$text-dark-color: $dark-grey
+
+@import "../node_modules/bootstrap/scss/bootstrap"
+@import url('https://fonts.googleapis.com/css2?family=Blinker&display=swap')
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap')
+
+body
+    font-family: 'Blinker', sans-serif
+    background-color: $bg-light
+    color: $dark-grey
+a
+    text-decoration: none
+//card
+.card
+    --bs-card-bg: $transparent
+    --bs-card-border-width: 0
+//title
+.logo
+    color: $text-dark-color
+    font-family: 'Varela Round', sans-serif
+    font-weight: 700
+    font-size: 3em
+    transition: .4s ease-in-out
+    cursor: pointer
+.logo:hover
+    color: $primary
+// buttons
+.btn
+    color: $text-light-color
+.btn:hover
+    color: $text-light-color
