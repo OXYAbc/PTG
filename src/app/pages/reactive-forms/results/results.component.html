@@ -1,0 +1,9 @@
+<fieldset class="border p-2">
+  <legend class="w-auto">
+    <h4>Results in UserState:</h4>
+  </legend>
+  <p><b>Name: </b>{{ (form$ | async)?.name }}</p>
+  <p><b>Email: </b>{{ (form$ | async)?.email }}</p>
+  <p><b>Type: </b>{{ (form$ | async)?.type }}</p>
+  <p><b>Password: </b>{{ (form$ | async)?.password }}</p>
+</fieldset>

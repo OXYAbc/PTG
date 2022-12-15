@@ -1,0 +1,49 @@
+<h4>Froms using UserState:</h4>
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <label>
+      Name:
+      <input type="text" class="form-control" formControlName="name" />
+    </label>
+    <div *ngIf="name?.invalid && name?.errors?.['required'] && name?.touched">
+      Name is required
+    </div>
+    <div *ngIf="name?.invalid && name?.errors?.['minlength'] && name?.touched">
+      Name must be at least 3 characters long
+    </div>
+  
+    <label>
+      Email:
+      <input type="email" class="form-control" formControlName="email" />
+    </label>
+    <div *ngIf="email?.invalid && email?.errors?.['required'] && email?.touched">
+      Email is required
+    </div>
+    <div *ngIf="email?.invalid && email?.errors?.['email'] && email?.touched">
+      Invalid email address
+    </div>
+
+    <label>
+      Type:
+      <select class="form-select" formControlName="type">
+        <option value="user">User</option>
+        <option value="admin">Admin</option>
+        <option value="viewer">Viewer</option>
+      </select>
+    </label>
+    <div *ngIf="type?.invalid && type?.errors?.['required'] && type?.touched">
+      Type is required
+    </div>
+  
+    <label>
+      Password:
+      <input type="password" class="form-control" formControlName="password" />
+    </label>
+    <div *ngIf="password?.invalid && password?.errors?.['required'] && password?.touched">
+      Password is required
+    </div>
+    <div *ngIf="password?.invalid && password?.errors?.['minlength'] && password?.touched">
+      Password must be at least 8 characters long
+    </div>
+  
+    <button class="btn btn-primary" type="submit">Submit</button>
+  </form>
