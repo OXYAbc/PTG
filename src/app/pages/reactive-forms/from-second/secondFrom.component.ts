@@ -53,6 +53,8 @@ export class SecondFromComponent {
   }
 
   onSubmit() {
-    this.store.dispatch(new SetUserData(this.form.value));
+    if (this.form.valid) {
+      this.store.dispatch(new SetUserData(this.form.value));
+    }
   }
 }

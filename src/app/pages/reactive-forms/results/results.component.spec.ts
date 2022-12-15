@@ -1,4 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { NgxsModule, Store } from '@ngxs/store';
+import { of } from 'rxjs';
+import { FormUserState } from '../forms.state';
 
 import { ResultsComponent } from './results.component';
 
@@ -8,7 +11,17 @@ describe('ResultsComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ResultsComponent ]
+      declarations: [ ResultsComponent ],
+      imports: [NgxsModule.forRoot([FormUserState])],
+      providers: [
+        {
+          provide: Store,
+          useValue: {
+            select: () => of(false),
+            dispatch: () => ({}),
+          },
+        },
+      ],
     })
     .compileComponents();
 

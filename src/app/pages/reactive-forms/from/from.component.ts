@@ -67,7 +67,9 @@ export class FromComponent implements OnInit {
   }
 
   onSubmit() {
-    this.form.reset();
-    this.store.dispatch(new SetUserData(this.form.value));
+    if(this.form.valid){
+      this.resetForm();
+      this.store.dispatch(new SetUserData(this.form.value));
+    }
   }
 }
