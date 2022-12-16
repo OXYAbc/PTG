@@ -1,4 +1,11 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Select, Store } from '@ngxs/store';
+import { Observable } from 'rxjs';
+import { ListModel } from 'src/app/@core/list.model';
+import {
+  CheckboxSelection,
+  CheckboxSelectionState,
+} from '../state/multiselect-state';
 
 @Component({
   selector: 'app-multiselect',
@@ -6,18 +13,13 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
   styleUrls: ['./multiselect.component.sass'],
 })
 export class MultiselectComponent {
-  @Output() checkedItems: EventEmitter<any> = new EventEmitter();
-  @Input() items: any;
-  selectedItems: any = [];
-  constructor() {}
+  @Input() items?: ListModel[];
+  @Select(CheckboxSelectionState.getSelectedOptions)
+  selectedItems$?: Observable<string[]>;
 
-  onItemSelect(item: any) {
-    const index = this.selectedItems.indexOf(item);
-    if (index > -1) {
-      this.selectedItems.splice(index, 1);
-    } else {
-      this.selectedItems.push(item);
-    }
-    this.checkedItems.emit(this.selectedItems);
+  constructor(private store: Store) {}
+
+  onItemSelect(item: string) {
+    this.store.dispatch(new CheckboxSelection(item));
   }
 }

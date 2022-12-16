@@ -3,10 +3,9 @@
     <h5>Select</h5>
     <div class="select-header-wrapper border">
       <span
-        *ngFor="let item of selectedItems"
+        *ngFor="let item of (selectedItems$ | async)"
         class="selected-item"
-        (click)="onItemSelect(item)"
-        >{{ item }} <i class="uil uil-times-circle"></i
+        >{{ item }} <i (click)="onItemSelect(item)" class="uil uil-times-circle"></i
       ></span>
     </div>
   </div>
@@ -19,7 +18,7 @@
             type="checkbox"
             class="form-check-input"
             [value]="item.item_text"
-            [checked]="selectedItems.includes(item.item_text)"
+            [checked]="(selectedItems$ | async)?.includes(item.item_text)"
           />
           <label class="form-check-label">
             {{ item.item_text }}
