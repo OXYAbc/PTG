@@ -1,0 +1,31 @@
+<div class="select border">
+  <div class="select-header">
+    <h5>Select</h5>
+    <div class="select-header-wrapper border">
+      <span
+        *ngFor="let item of selectedItems"
+        class="selected-item"
+        (click)="onItemSelect(item)"
+        >{{ item }} <i class="uil uil-times-circle"></i
+      ></span>
+    </div>
+  </div>
+  <div class="wrapper">
+    <ul>
+      <li *ngFor="let item of items">
+        <div class="form-check">
+          <input
+            (change)="onItemSelect(item.item_text)"
+            type="checkbox"
+            class="form-check-input"
+            [value]="item.item_text"
+            [checked]="selectedItems.includes(item.item_text)"
+          />
+          <label class="form-check-label">
+            {{ item.item_text }}
+          </label>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>

@@ -1,0 +1,12 @@
+<div class="container">
+  <div class="logo mb-3">XO</div>
+  <h3>Multiselects</h3>
+  <div class="row gap-4">
+    <app-multiselect class="col-lg-4 col-md-5 col-lg-sm-12" [items]="dropdownList" (checkedItems)="simpleSelectOutput($event)"></app-multiselect>
+    <app-results class="col-lg-4 col-md-5 col-lg-sm-12" [title]="'Results from simple Array'">
+      <ul>
+        <li *ngFor="let item of simpleSelectResults">{{item}}</li>
+      </ul>
+    </app-results>
+  </div>
+</div>
