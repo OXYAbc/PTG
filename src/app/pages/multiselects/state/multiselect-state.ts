@@ -2,31 +2,34 @@ import { State, Action, StateContext, Selector } from '@ngxs/store';
 
 export class CheckboxSelection {
   static readonly type = '[Checkbox] Toggle selected';
-  constructor(public payload: string) {}
+  constructor(public checkboxType: string, public payload: string) {}
 }
 
-@State<string[]>({
+@State<{ [key: string]: string[] }>({
   name: 'checkboxSelection',
-  defaults: []
+  defaults: {
+    simpleMSelect: [],
+  },
 })
 export class CheckboxSelectionState {
-
   @Selector()
-    static getSelectedOptions(state: string[]) {
-        return state;
-    }
+  static getSelectedOptions(state: { [key: string]: string[] }) {
+    return state;
+  }
 
   @Action(CheckboxSelection)
-    toggleSelectedOption(ctx: StateContext<string[]>, action: CheckboxSelection) {
-        const state = ctx.getState();
-        const index = state.indexOf(action.payload);
-        if (index > -1) {
-            state.splice(index, 1);
-        } else {
-            state.push(action.payload);
-        }
-
-        ctx.setState([...state]);
+  toggleSelectedOption(
+    ctx: StateContext<{ [key: string]: string[] }>,
+    action: CheckboxSelection
+  ) {
+    const state = ctx.getState();
+    const checkboxType = action.checkboxType;
+    const index = state[checkboxType].indexOf(action.payload);
+    if (index > -1) {
+      state[checkboxType].splice(index, 1);
+    } else {
+      state[checkboxType].push(action.payload);
     }
-
+    ctx.setState({ ...state });
+  }
 }
