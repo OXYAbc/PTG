@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Select } from '@ngxs/store';
-import { map, Observable } from 'rxjs';
-import { ListModel, StateMutliselect } from 'src/app/@core/list.model';
+import { Observable } from 'rxjs';
+import { ListModel } from 'src/app/@core/list.model';
 import { CheckboxSelectionState } from './state/multiselect-state';
 
 @Component({
@@ -50,14 +50,16 @@ export class MultiselectsComponent {
     },
   ];
   @Select(CheckboxSelectionState.getSelectedOptions)
-  private simpleSelectResults$?: Observable<StateMutliselect>;
-  protected selectedItems$?: string[];
+  protected selectedItems$?: Observable<any>;
 
-  constructor() {
-    this.simpleSelectResults$
-      ?.pipe(map((item: any) => item.simpleMSelect))
-      .subscribe((res) => {
-        this.selectedItems$ = res;
-      });
+  checkCity(city: string) {
+    let foundCountry;
+    this.groupedCities.forEach((country) => {
+      if (country.items.some((x) => x.value === city)) {
+        foundCountry = country.label;
+        return;
+      }
+    });
+    return foundCountry;
   }
 }

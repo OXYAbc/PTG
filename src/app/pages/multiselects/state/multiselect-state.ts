@@ -9,6 +9,7 @@ export class CheckboxSelection {
   name: 'checkboxSelection',
   defaults: {
     simpleMSelect: [],
+    groupeMSelect: []
   },
 })
 export class CheckboxSelectionState {
