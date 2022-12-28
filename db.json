@@ -1,0 +1,211 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "movies": [
+    {
+      "score": 0,
+      "id": 1,
+      "title": "The Shawshank Redemption",
+      "genre": "Drama",
+      "director": "Frank Darabont",
+      "poster": "https://m.media-amazon.com/images/M/MV5BMDFkYTc0MGEtZmNhMC00ZDIzLWFmNTEtODM1ZmRlYWMwMWFmXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_SY1000_CR0,0,672,1000_AL_.jpg"
+    },
+    {
+      "score": 0,
+      "id": 2,
+      "title": "The Godfather",
+      "genre": "Crime, Drama",
+      "director": "Francis Ford Coppola",
+      "poster": "https://m.media-amazon.com/images/M/MV5BM2MyNjYxNmUtYTAwNi00MTYxLWJmNWYtYzZlODY3ZTk3OTFlXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SY1000_CR0,0,704,1000_AL_.jpg"
+    },
+    {
+      "score": 0,
+      "id": 3,
+      "title": "The Godfather: Part II",
+      "genre": "Crime, Drama",
+      "director": "Francis Ford Coppola",
+      "poster": "https://m.media-amazon.com/images/M/MV5BMWMwMGQzZTItY2JlNC00OWZiLWIyMDctNDk2ZDQ2YjRjMWQ0XkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SY1000_CR0,0,704,1000_AL_.jpg"
+    },
+    {
+      "id": 4,
+      "score": 0,
+      "title": "The Dark Knight",
+      "genre": "Action, Crime, Drama",
+      "director": "Christopher Nolan",
+      "poster": "https://m.media-amazon.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_SY1000_CR0,0,675,1000_AL_.jpg"
+    },
+    {
+      "id": 5,
+      "score": 0,
+      "title": "12 Angry Men",
+      "genre": "Crime, Drama",
+      "director": "Sidney Lumet",
+      "poster": "https://m.media-amazon.com/images/M/MV5BODQwOTc5MDM2N15BMl5BanBnXkFtZTcwODQxNTEzNA@@._V1_SY1000_CR0,0,666,1000_AL_.jpg"
+    },
+    {
+      "id": 6,
+      "score": 0,
+      "title": "Schindler's List",
+      "genre": "Biography, Drama, History",
+      "director": "Steven Spielberg",
+      "poster": "https://m.media-amazon.com/images/M/MV5BNDE4OTMxMTctNmRhYy00NWE2LTg3YzItYTk3M2UwOTU5Njg4XkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_SY1000_CR0,0,666,1000_AL_.jpg"
+    },
+    {
+      "id": 7,
+      "score": 0,
+      "title": "The Lord of the Rings: The Return of the King",
+      "genre": "Adventure, Drama, Fantasy",
+      "director": "Peter Jackson",
+      "poster": "https://m.media-amazon.com/images/M/MV5BNzA5ZDNlZWMtM2NhNS00NDJjLTk4NDItYTRmY2EwMWZlMTY3XkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SY1000_CR0,0,673,1000_AL_.jpg"
+    },
+    {
+      "id": 8,
+      "score": 0,
+      "title": "Pulp Fiction",
+      "genre": "Crime, Drama",
+      "director": "Quentin Tarantino",
+      "poster": "https://m.media-amazon.com/images/M/MV5BNGNhMDIzZTUtNTBlZi00MTRlLWFjM2ItYzViMjE3YzI5MjljXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SY1000_CR0,0,686,1000_AL_.jpg"
+    },
+    {
+      "id": 9,
+      "score": 0,
+      "title": "The Good, the Bad and the Ugly ",
+      "genre": "Western",
+      "director": "Sergio Leone",
+      "poster": "https://m.media-amazon.com/images/M/MV5BOTQ5NDI3MTI4MF5BMl5BanBnXkFtZTgwNDQ4ODE5MDE@._V1_SY1000_CR0,0,656,1000_AL_.jpg"
+    },
+    {
+      "id": 10,
+      "score": 0,
+      "title": "The Lord of the Rings: The Fellowship of the Ring",
+      "genre": "Adventure, Drama, Fantasy",
+      "director": "Peter Jackson",
+      "poster": "https://m.media-amazon.com/images/M/MV5BN2EyZjM3NzUtNWUzMi00MTgxLWI0NTctMzY4M2VlOTdjZWRiXkEyXkFqcGdeQXVyNDUzOTQ5MjY@._V1_SY1000_SX700_AL_.jpg"
+    },
+    {
+      "id": 11,
+      "score": 0,
+      "title": "Fight Club",
+      "genre": "Drama",
+      "director": "David Fincher",
+      "poster": "https://m.media-amazon.com/images/M/MV5BMjJmYTNkNmItYjYyZC00MGUxLWJhNWMtZDY4Nzc1MDAwMzU5XkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SY1000_CR0,0,666,1000_AL_.jpg"
+    },
+    {
+      "id": 12,
+      "score": 0,
+      "title": "Star Wars: Episode V - The Empire Strikes Back",
+      "genre": "Action, Adventure, Fantasy",
+      "director": "Irvin Kershner",
+      "poster": "https://m.media-amazon.com/images/M/MV5BYmViY2M2MTYtY2MzOS00YjQ1LWIzYmEtOTBiNjhlMGM0NjZjXkEyXkFqcGdeQXVyNDYyMDk5MTU@._V1_SY1000_SX700_AL_.jpg"
+    },
+    {
+      "id": 13,
+      "score": 0,
+      "title": "Inception",
+      "genre": "Action, Adventure, Sci-Fi",
+      "director": "Christopher Nolan",
+      "poster": "https://m.media-amazon.com/images/M/MV5BMjAxMzY3NjcxNF5BMl5BanBnXkFtZTcwNTI5OTM0Mw@@._V1_SY1000_CR0,0,675,1000_AL_.jpg"
+    },
+    {
+      "id": 14,
+      "score": 0,
+      "title": "The Lord of the Rings: The Two Towers",
+      "genre": "Adventure, Drama, Fantasy",
+      "director": "Peter Jackson",
+      "poster": "https://m.media-amazon.com/images/M/MV5BNGE5MzIyNTAtNWFlMC00NDA2LWJiMjItMjc4Yjg1OWM5NzhhXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SY1000_CR0,0,685,1000_AL_.jpg"
+    },
+    {
+      "id": 15,
+      "score": 0,
+      "title": "Forrest Gump",
+      "genre": "Drama, Romance",
+      "director": "Robert Zemeckis",
+      "poster": "https://m.media-amazon.com/images/M/MV5BNWIwODRlZTUtY2U3ZS00Yzg1LWJhNzYtMmZiYmEyNmU1NjMzXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SY1000_CR0,0,666,1000_AL_.jpg"
+    },
+    {
+      "title": "The Matrix",
+      "score": 0,
+      "id": 22,
+      "genre": "Action, Sci-Fi",
+      "director": "Andy Wachowski, Lana Wachowski",
+      "poster": "https://m.media-amazon.com/images/M/MV5BNzQzOTk3OTAtNDQ0Zi00ZTVkLWI0MTEtMDllZjNkYzNjNTc4L2ltYWdlXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_SY1000_CR0,0,665,1000_AL_.jpg"
+    },
+    {
+      "id": 16,
+      "title": "Goodfellas",
+      "score": 0,
+      "genre": "Crime, Drama",
+      "director": "Martin Scorsese",
+      "poster": "https://m.media-amazon.com/images/M/MV5BY2NkZjEzMDgtN2RjYy00YzM1LWI4ZmQtMjIwYjFjNmI3ZGEwXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SY1000_CR0,0,681,1000_AL_.jpg"
+    },
+    {
+      "id": 17,
+      "score": 0,
+      "title": "Star Wars: Episode IV - A New Hope",
+      "genre": "Action, Adventure, Fantasy",
+      "director": "George Lucas",
+      "poster": "https://m.media-amazon.com/images/M/MV5BNzVlY2MwMjktM2E4OS00Y2Y3LWE3ZjctYzhkZGM3YzA1ZWM2XkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SY1000_CR0,0,640,1000_AL_.jpg"
+    },
+    {
+      "id": 18,
+      "score": 0,
+      "title": "Seven Samurai",
+      "genre": "Adventure, Drama",
+      "director": "Akira Kurosawa",
+      "poster": "https://m.media-amazon.com/images/M/MV5BMTc5MDY1MjU5MF5BMl5BanBnXkFtZTgwNDM2OTE4MzE@._V1_SY1000_CR0,0,652,1000_AL_.jpg"
+    },
+    {
+      "id": 19,
+      "score": 0,
+      "title": "Se7en",
+      "genre": "Crime, Drama, Mystery",
+      "director": "David Fincher",
+      "poster": "https://m.media-amazon.com/images/M/MV5BOTUwODM5MTctZjczMi00OTk4LTg3NWUtNmVhMTAzNTNjYjcyXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_SY1000_CR0,0,655,1000_AL_.jpg"
+    },
+    {
+      "id": 20,
+      "score": 0,
+      "title": "The Silence of the Lambs",
+      "genre": "Crime, Drama, Thriller",
+      "director": "Jonathan Demme",
+      "poster": "https://m.media-amazon.com/images/M/MV5BMTQ2NzkzMDI4OF5BMl5BanBnXkFtZTcwMDA0NzE1NA@@._V1_SY1000_CR0,0,666,1000_AL_.jpg"
+    },
+    {
+      "title": "Avatar way of water",
+      "director": "James Cameron",
+      "genre": "Sci-Fi, Action, Adventure",
+      "poster": "https://m.media-amazon.com/images/M/MV5BOTc2ZDQxNjktODcyMS00MDE3LWIyMWItYmFhOWNiMDE5YTU1XkEyXkFqcGdeQXVyMTQ5NTE0NzQ1._V1_FMjpg_UX1200_.jpg",
+      "id": 21,
+      "score": 0
+    }
+  ],
+  "categories": [
+    "Drama",
+    "Romance",
+    "Sci-Fi",
+    "Action",
+    "Crime",
+    "Mystery",
+    "Thriller",
+    "Adventure",
+    "Biography",
+    "History",
+    "Fantasy",
+    "Western"
+  ]
+}

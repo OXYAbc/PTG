@@ -1,0 +1,18 @@
+<div class="container d-flex gap-4" *ngIf="movie$ | async as item">
+  <img class="img-thumbnail" [src]="item.poster" />
+  <div class="card-body">
+    <h3>{{ item.title }}</h3>
+    <small>{{ item.director }}</small>
+    <br />
+    <span>{{ item.genre }}</span>
+    <div class="card-text mt-2">
+      description:
+      <p>
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis,
+        amet consequuntur voluptatum repellat quibusdam incidunt voluptas saepe
+        asperiores facilis. Aspernatur tempora adipisci quam nostrum iste sunt.
+        Ex deleniti nesciunt maxime.
+      </p>
+    </div>
+  </div>
+</div>

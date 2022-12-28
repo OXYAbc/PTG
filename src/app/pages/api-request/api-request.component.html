@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="logo mb-3">XO</div>
+  <h3>API Component</h3>
+  <div class="row gap-4">
+    <div class="d-flex gap-4">
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Search Movie"
+        (input)="search$.next($any($event.target).value)"
+      />
+      <button class="btn btn-primary" [disabled]="delete" (click)="onAddMovie()">Add movie</button>
+      <button class="btn btn-primary" [ngClass]="{'btn-warning': delete}" (click)="onDelete()">Delete movie</button>
+
+    </div>
+    <div class="row justify-content-center">
+      <app-movie [ngClass]="{'delete-mode': delete}"
+        class="col-lg-3 col-md-4 col-lg-sm-12"
+        *ngFor="let item of (movies$ | async)"
+        [data]="item"
+        (click)="itemID$.next(item.id)"
+      ></app-movie>
+    </div>
+  </div>
+</div>

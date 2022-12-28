@@ -1,0 +1,49 @@
+<div class="container">
+  <h4>Add Movie</h4>
+  <div class="row d-flex align-items-center">
+      <form (ngSubmit)="addMovie()" class="d-flex flex-column gap-2 col-lg-6 col-md-6 col-lg-sm-12" #form="ngForm">
+        <div class="form-group">
+          <label for="movieTitle">Movie title</label>
+          <input
+            type="text"
+            class="form-control"
+            id="movieTitle"
+            name="title"
+            placeholder="Enter Title"
+            [(ngModel)]="movie.title"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="movieDirector">Director</label>
+          <input
+            type="text"
+            class="form-control"
+            id="movieDirector"
+            name="director"
+            placeholder="Director"
+            [(ngModel)]="movie.director"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="movieGenre">Genre</label>
+          <app-multiselect [items$]="genre" (selectedItems)="convertToStr($event)"></app-multiselect>
+        </div>
+        <div class="form-group">
+          <label for="moviePoster">Poster</label>
+          <input
+            type="url"
+            class="form-control"
+            id="moviePoster"
+            name="poster"
+            placeholder="URL Poster"
+            [(ngModel)]="movie.poster"
+            required
+          />
+        </div>
+        <button type="submit" class="btn btn-primary" [disabled]="form.invalid">Submit</button>
+      </form>
+      <app-movie class="col-lg-6 col-md-4 col-lg-sm-12 movie" [data]="movie"></app-movie>
+  </div>
+</div>

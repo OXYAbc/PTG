@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgxsModule } from '@ngxs/store';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { ApiRequestModule } from './pages/api-request/api-request.module';
 import { DashboardModule } from './pages/dashboard/dashboard.module';
 import { MultiSelectsModule } from './pages/multiselects/multiselects.module';
 import { CheckboxSelectionState } from './pages/multiselects/state/multiselect-state';
@@ -12,12 +13,13 @@ import { MyReactiveFormsModule } from './pages/reactive-forms/reactive-froms.mod
 @NgModule({
   declarations: [AppComponent],
   imports: [
-    BrowserModule,
     AppRoutingModule,
     DashboardModule,
     MyReactiveFormsModule,
+    BrowserModule,
     NgxsModule.forRoot([FormUserState, CheckboxSelectionState]),
     MultiSelectsModule,
+    ApiRequestModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
