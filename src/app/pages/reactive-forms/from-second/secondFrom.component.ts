@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import {
   FormGroup,
   FormBuilder,
@@ -15,6 +15,7 @@ import { FormUserState, SetUserData, UserStateModel } from '../forms.state';
   styleUrls: ['./secondFrom.component.sass'],
 })
 export class SecondFromComponent {
+  @Input() cities?: Observable<string[]>;
   @Select(FormUserState.getState) formState$?: Observable<UserStateModel>;
   private nameValue: string = '';
   form: FormGroup = this.fb.group({

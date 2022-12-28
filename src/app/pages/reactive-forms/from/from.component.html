@@ -48,6 +48,10 @@
   >
     Password must be at least 8 characters long
   </div>
+  <label>
+    From which country do you want work ?
+  <app-multiselect [items$]="items" (selectedItems)="onSelectCities($event)"></app-multiselect>
+  </label>
 
   <button class="btn btn-warning" type="submit">Clear All</button>
 </form>

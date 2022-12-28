@@ -9,8 +9,8 @@
     ></i
   ></span>
   <div class="row gap-4">
-    <app-from class="col-lg-4 col-md-5 col-lg-sm-12"></app-from>
-    <app-second-form class="col-lg-4 col-md-5 col-lg-sm-12"></app-second-form>
+    <app-from [items]="countries$" class="col-lg-4 col-md-5 col-lg-sm-12"></app-from>
+    <app-second-form [cities]="cities$" class="col-lg-4 col-md-5 col-lg-sm-12"></app-second-form>
     <app-results class="col-lg-3 col-md-12 col-lg-sm-12"></app-results>
   </div>
 </div>
