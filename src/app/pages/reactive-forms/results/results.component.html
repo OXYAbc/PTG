@@ -6,4 +6,5 @@
   <p><b>Email: </b>{{ (form$ | async)?.email }}</p>
   <p><b>Type: </b>{{ (form$ | async)?.type }}</p>
   <p><b>Password: </b>{{ (form$ | async)?.password }}</p>
+  <p><b>Places: </b><span *ngFor="let item of (form$ | async)?.places">{{item}} </span></p>
 </fieldset>

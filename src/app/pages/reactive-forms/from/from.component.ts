@@ -1,16 +1,20 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import {
   FormGroup,
   FormBuilder,
   FormControl,
   Validators,
+  FormArray,
 } from '@angular/forms';
 import { Store } from '@ngxs/store';
+import { Observable } from 'rxjs';
+import { MultiselectComponent } from 'src/app/@theme/custom-components/multiselect/multiselect.component';
 import {
   SetUserData,
   SetUserEmail,
   SetUserName,
   SetUserPassword,
+  SetUserPlaces,
   SetUserType,
 } from '../forms.state';
 
@@ -20,6 +24,10 @@ import {
   styleUrls: ['./from.component.sass'],
 })
 export class FromComponent implements OnInit {
+  @ViewChild(MultiselectComponent, { static: false })
+  private multiselect?: MultiselectComponent;
+  @Input() items?: Observable<string[]>;
+  protected arrayToSend: string[] = [];
   form: FormGroup = this.fb.group({
     name: new FormControl('', [Validators.required, Validators.minLength(3)]),
     email: new FormControl('', [Validators.required, Validators.email]),
@@ -28,10 +36,12 @@ export class FromComponent implements OnInit {
       Validators.required,
       Validators.minLength(8),
     ]),
+    places: this.fb.array([]),
   });
 
   constructor(private fb: FormBuilder, private store: Store) {}
   ngOnInit() {
+    this.multiselect?.resetSelected();
     this.form.get('name')?.valueChanges.subscribe(() => {
       this.store.dispatch(new SetUserName(this.form.get('name')?.value));
     });
@@ -51,6 +61,7 @@ export class FromComponent implements OnInit {
   }
   resetForm(): void {
     this.form.reset();
+    this.multiselect?.resetSelected();
   }
 
   get name() {
@@ -66,10 +77,17 @@ export class FromComponent implements OnInit {
     return this.form?.get('type');
   }
 
+  onSelectCities(array: string[]) {
+    this.arrayToSend = array;
+    this.store.dispatch(new SetUserPlaces(array));
+  }
+
   onSubmit() {
-    if(this.form.valid){
-      this.resetForm();
+    const placesArray = this.form.get('places') as FormArray;
+    this.arrayToSend.forEach((item) => placesArray.push(new FormControl(item)));
+    if (this.form.valid) {
       this.store.dispatch(new SetUserData(this.form.value));
+      this.resetForm();
     }
   }
 }

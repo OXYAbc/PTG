@@ -1,10 +1,15 @@
+import { HttpClient } from '@angular/common/http';
 import { State, Action, Selector, StateContext } from '@ngxs/store';
+import { tap } from 'rxjs';
+import { Country } from 'src/app/@core/country-city.model';
 
 export interface UserStateModel {
   name: string;
   email: string;
   password: string;
   type: string;
+  places: string[];
+  cities: string[];
 }
 
 export class SetUserData {
@@ -32,6 +37,15 @@ export class SetUserType {
   constructor(public type: string) {}
 }
 
+export class SetUserPlaces {
+  static readonly type = '[User] Set User Places';
+  constructor(public places: string[]) {}
+}
+export class GetCities {
+  static readonly type = '[User] Get User Cities';
+  constructor(public cities: string[]) {}
+}
+
 @State<UserStateModel>({
   name: 'user',
   defaults: {
@@ -39,9 +53,12 @@ export class SetUserType {
     email: 'email',
     password: 'pasword',
     type: 'user',
-  }
+    places: ['New York', 'Berlin'],
+    cities: [],
+  },
 })
 export class FormUserState {
+
   @Selector()
   static getState(state: UserStateModel) {
     return state;
@@ -63,28 +80,78 @@ export class FormUserState {
     return state.password;
   }
 
+  @Selector()
+  static getPlaces(state: UserStateModel) {
+    return state.places;
+  }
+
   @Action(SetUserData)
-  setUserData({ patchState }: StateContext<UserStateModel>, action: SetUserData) {
+  setUserData(
+    { patchState }: StateContext<UserStateModel>,
+    action: SetUserData
+  ) {
     patchState(action.user);
   }
 
   @Action(SetUserName)
-  setUserName({ patchState }: StateContext<UserStateModel>, action: SetUserName) {
+  setUserName(
+    { patchState }: StateContext<UserStateModel>,
+    action: SetUserName
+  ) {
     patchState({ name: action.name });
   }
 
   @Action(SetUserEmail)
-  setUserEmail({ patchState }: StateContext<UserStateModel>, action: SetUserEmail) {
+  setUserEmail(
+    { patchState }: StateContext<UserStateModel>,
+    action: SetUserEmail
+  ) {
     patchState({ email: action.email });
   }
 
   @Action(SetUserType)
-  setUserType({ patchState }: StateContext<UserStateModel>, action: SetUserType) {
+  setUserType(
+    { patchState }: StateContext<UserStateModel>,
+    action: SetUserType
+  ) {
     patchState({ type: action.type });
   }
 
   @Action(SetUserPassword)
-  setUserPassword({ patchState }: StateContext<UserStateModel>, action: SetUserPassword) {
+  setUserPassword(
+    { patchState }: StateContext<UserStateModel>,
+    action: SetUserPassword
+  ) {
     patchState({ password: action.password });
   }
+
+  @Action(SetUserPlaces)
+  setUserPlaces(
+    { patchState }: StateContext<UserStateModel>,
+    action: SetUserPlaces
+  ) {
+    patchState({ places: action.places });
+  }
+
+  // @Action(GetCities)
+  // getAvailableCity({ getState, setState }: StateContext<UserStateModel>) {
+  //   const state = getState();
+
+  //   return this.httpClient.get<Country[]>('assets/country-city.json').pipe(
+  //     tap((data) => {
+  //       let cities: string[] = [];
+  //       data.forEach((countryData) => {
+  //         if (state.places.includes(countryData.label)) {
+  //           countryData.items.forEach((city) => {
+  //             cities.push(city.value);
+  //           });
+  //         }
+  //       });
+  //       // setState({
+  //       //   ...state,
+  //       //   cities: result
+  //       // });
+  //     })
+  //   );
+  // }
 }

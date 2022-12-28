@@ -1,4 +1,4 @@
-import { AsyncPipe } from '@angular/common';
+import { AsyncPipe, CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { ResultsComponent } from './results.component';
 
@@ -7,6 +7,6 @@ import { ResultsComponent } from './results.component';
   declarations: [ResultsComponent,],
   providers: [],
   exports: [ResultsComponent],
-  imports: [AsyncPipe],
+  imports: [AsyncPipe, CommonModule],
 })
 export class FormsResultsModule {}
