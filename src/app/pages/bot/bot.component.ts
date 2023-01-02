@@ -2,7 +2,6 @@ import {
   AfterViewChecked,
   Component,
   ElementRef,
-  OnInit,
   ViewChild,
 } from '@angular/core';
 import { BotService } from './bot.service';
