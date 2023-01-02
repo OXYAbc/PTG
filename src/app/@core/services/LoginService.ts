@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, map, Observable, switchMap } from 'rxjs';
-import { Country } from '../country-city.model';
 import {
   FormUserState,
   UserStateModel,
 } from 'src/app/pages/reactive-forms/forms.state';
 import { Select } from '@ngxs/store';
+import { Country, City } from '../country-city.model';
 
 @Injectable({ providedIn: 'root' })
 export class LoginService {
@@ -32,7 +32,7 @@ export class LoginService {
       .pipe(
         map((res) =>
           res
-            ?.map((item) => item.items.map((city) => city.value))
+            ?.map((item) => item.items.map((city:City) => city.value))
             .reduce((acc, curr) => [...acc, ...curr], [])
         )
       );
