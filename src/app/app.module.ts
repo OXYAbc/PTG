@@ -6,8 +6,6 @@ import { AppComponent } from './app.component';
 import { ApiRequestModule } from './pages/api-request/api-request.module';
 import { BotModule } from './pages/bot/bot.module';
 import { DashboardModule } from './pages/dashboard/dashboard.module';
-import { MultiSelectsModule } from './pages/multiselects/multiselects.module';
-import { CheckboxSelectionState } from './pages/multiselects/state/multiselect-state';
 import { FormUserState } from './pages/reactive-forms/forms.state';
 import { MyReactiveFormsModule } from './pages/reactive-forms/reactive-froms.module';
 
@@ -18,8 +16,7 @@ import { MyReactiveFormsModule } from './pages/reactive-forms/reactive-froms.mod
     DashboardModule,
     MyReactiveFormsModule,
     BrowserModule,
-    NgxsModule.forRoot([FormUserState, CheckboxSelectionState]),
-    MultiSelectsModule,
+    NgxsModule.forRoot([FormUserState]),
     ApiRequestModule,
     BotModule
   ],
