@@ -1,0 +1,72 @@
+<main class="d-flex align-items-center">
+  <div class="container d-flex align-content-around flex-wrap">
+    <div #scrollContainer class="conversation">
+      <ng-container *ngIf="converstation.length > 0; else empty">
+        <span *ngFor="let item of converstation">
+          <div
+            class="request row align-items-center"
+            *ngIf="item.sender === 'user'"
+          >
+            <div class="message">
+              <span>{{ item.mess }}</span>
+            </div>
+            <i class="uil uil-user"></i>
+          </div>
+          <div
+            class="response row align-items-center"
+            *ngIf="item.sender === 'bot'"
+          >
+            <i class="uil uil-robot"></i>
+            <div class="message">
+              <span>{{ item.mess }}</span>
+            </div>
+          </div>
+        </span>
+      </ng-container>
+      <ng-template #empty>
+        <div class="text-center empty-header">
+          <span class="title">CHATBOT 0XY</span>
+        </div>
+        <div class="row text-center">
+          <div class="col-lg-4 col-md-5 col-lg-sm-12">
+            <div class="mb-2">
+              <i class="uil uil-lightbulb-alt"></i>
+            </div>
+            <strong> Below are sample queries </strong>
+            <br />
+            Hi how are you? <br />Tell me, what city is the capital of Croatia?
+            <br />What's the weather like in Rzeszów today?
+          </div>
+          <div class="col-lg-4 col-md-5 col-lg-sm-12">
+            <div class="mb-2">
+              <i class="uil uil-bolt-alt"></i>
+            </div>
+            <strong> Capabilities </strong>
+            <br />
+            Answers simple questions<br />
+            can respond to multiple requests<br />
+            Remembers what user said earlier in the conversation
+          </div>
+          <div class="col-lg-4 col-md-5 col-lg-sm-12">
+            <div class="mb-2">
+              <i class="uil uil-exclamation-octagon"></i>
+            </div>
+            <strong> Limitations </strong>
+            <br />
+            speaks only English <br />
+            Does not answer complex questions and issues <br />
+            sometimes it takes a moment to think ;)
+          </div>
+        </div>
+      </ng-template>
+    </div>
+    <textarea
+      (keydown.enter)="send()"
+      class="form-control"
+      [(ngModel)]="message"
+      id="exampleFormControlTextarea1"
+      rows="3"
+      required
+    ></textarea>
+  </div>
+</main>
