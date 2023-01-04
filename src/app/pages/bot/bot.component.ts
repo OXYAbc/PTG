@@ -20,6 +20,7 @@ export class BotComponent implements AfterViewChecked {
   @ViewChild('scrollContainer') scrollContainer!: ElementRef;
   message!: string;
   converstation: Message[] = [];
+  loading: boolean = false;
   number = 0;
 
   constructor(private service: BotService) {}
@@ -29,12 +30,13 @@ export class BotComponent implements AfterViewChecked {
   }
 
   send() {
-    if (this.number % 2 === 0) {
-      this.converstation?.push({ sender: 'user', mess: this.message });
-      this.service.requestApi(this.message).subscribe(res=> this.converstation?.push({ sender: 'bot', mess: res }))
-      this.number++
-    }
-    this.number++
+    this.converstation?.push({ sender: 'user', mess: this.message });
+    this.loading = true;
+    this.service.requestApi(this.message).subscribe((res) => {
+      this.loading = false
+      this.converstation?.push({ sender: 'bot', mess: res });
+    });
+    this.number++;
     this.message = '';
   }
   scrollToBottom() {
