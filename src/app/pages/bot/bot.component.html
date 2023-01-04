@@ -23,6 +23,15 @@
           </div>
         </span>
       </ng-container>
+      <div
+            class="response row align-items-center"
+            *ngIf="loading"
+          >
+            <i class="uil uil-robot"></i>
+            <div class="message">
+              <span class="type">typing</span>
+            </div>
+          </div>
       <ng-template #empty>
         <div class="text-center empty-header">
           <span class="title">CHATBOT 0XY</span>
