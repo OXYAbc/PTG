@@ -1,0 +1,71 @@
+@import '../../../assets/colors'
+:host
+    display: flex
+    overflow-x: scroll
+    scroll-behavior: smooth
+    width: max-content
+    .form-control
+        color: #afafaf
+        background-color: $transparent
+        border: none
+    .form-control:focus 
+        border:none
+        box-shadow: 0 0 0 .2rem rgb(255 255 255 / 25%)
+    .btn-primary
+        background-color: $transparent
+        border-color: rgb(255 255 255 / 25%)
+    .correctItem
+        border-color: $primary!important
+        color: $primary
+
+    section
+        height: 100vh
+        width: 100vw
+        padding: 2em
+        overflow: hidden
+        background: #2c2447
+        --bd-pink-rgb: 214,51,132
+        --bs-body-bg-rgb: 33,37,41
+        --bs-primary-rgb: 13,110,253
+        --bd-accent-rgb: 255,228,132
+        --bd-violet-rgb: 112.520718,44.062154,249.437846
+        background-image: linear-gradient(180deg, rgba(var(--bs-body-bg-rgb), 0.01), rgba(var(--bs-body-bg-rgb), 1) 85%),radial-gradient(ellipse at top left, rgba(var(--bs-primary-rgb), 0.5), transparent 50%),radial-gradient(ellipse at top right, rgba(var(--bd-accent-rgb), 0.5), transparent 50%),radial-gradient(ellipse at center right, rgba(var(--bd-violet-rgb), 0.5), transparent 50%),radial-gradient(ellipse at center left, rgba(var(--bd-pink-rgb), 0.5), transparent 50%)
+        color:#afafaf
+        .logo
+            color: $text-light-color
+            pointer-events: none
+        .content
+            display: flex
+            flex-direction: column
+            height: 100%
+
+            .synaps
+                padding: 2em
+                display: flex
+                align-items: center
+                margin: auto 0
+                hr
+                    width: 16%
+                .uil
+                    font-size: 2em
+                    position: relative
+                .uil-check-circle
+                    color:$primary
+                .uil::after
+                    position: absolute
+                    content: "state"
+                    font-family: "Blinker", sans-serif
+                    font-style: normal
+                    font-size: 1rem
+                    bottom: -16px
+                    right: -8%
+            
+            ul
+                padding: 2em
+                width: min-content
+        
+    section:nth-child(2n)
+        transform: scaleX(-1)
+        background-image: linear-gradient(180deg, rgba(var(--bs-body-bg-rgb), 0.01), rgba(var(--bs-body-bg-rgb), 1) 85%), radial-gradient(ellipse at center left, rgba(var(--bd-pink-rgb), 0.5), transparent 50%),radial-gradient(ellipse at top right, rgba(var(--bd-accent-rgb), 0.5), transparent 50%),radial-gradient(ellipse at center right, rgba(var(--bd-violet-rgb), 0.5), transparent 50%),radial-gradient(ellipse at top left, rgba(var(--bs-primary-rgb), 0.5), transparent 50%)
+        .content
+            transform: scaleX(-1)

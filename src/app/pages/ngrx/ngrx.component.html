@@ -1,0 +1,58 @@
+<section>
+  <div class="content">
+    <!-- <div class="logo">Welcome on my NgRX playground</div> -->
+    <div class="synaps">
+      <app-card
+        class="border rounded col-md-2"
+        [ngClass]="{ correctItem: data }"
+      >
+        <input
+          type="text"
+          class="form-control correct"
+          name=""
+          id=""
+          [(ngModel)]="data"
+          placeholder="add new product"
+        />
+      </app-card>
+      <hr [ngClass]="{ correctItem: data }" />
+      <app-card class="border rounded" [ngClass]="{ correctItem: data }">
+        <button
+          (click)="onSend()"
+          class="btn btn-primary"
+          [ngClass]="{ correctItem: checkControl  && data }"
+        >
+          Add product to list
+        </button>
+      </app-card>
+      <hr [ngClass]="{ correctItem: checkControl }" />
+      <i *ngIf="!checkControl" class="uil uil-circle"></i>
+      <i *ngIf="checkControl && data" class="uil uil-check-circle"></i>
+      <hr [ngClass]="{ correctItem: checkControl }" />
+      <app-card class="border rounded col-md-2" [ngClass]="{ correctItem: checkControl && data }"
+        ><ul>
+          <li *ngFor="let item of shopList">{{item}}</li>
+        </ul>
+      </app-card>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="content">
+    <div class="logo">Welcome on my NgRX playground</div>
+    <p>ngrx works!</p>
+  </div>
+</section>
+<section>
+  <div class="content">
+    <div class="logo">Welcome on my NgRX playground</div>
+    <p>ngrx works!</p>
+  </div>
+</section>
+<section>
+  <div class="content">
+    <div class="logo">Welcome on my NgRX playground</div>
+    <p>ngrx works!</p>
+  </div>
+</section>
