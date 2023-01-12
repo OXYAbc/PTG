@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Account } from '../account.model';
-import { Observable } from 'rxjs';
+import { forkJoin, Observable } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
 export class BankingService {
@@ -16,10 +16,18 @@ export class BankingService {
     return this.http.get<Account>(this.API_PATH + '/' + id);
   }
   public updateAccountData(account: Partial<Account>): Observable<Account> {
-    return this.http
-      .patch<Account>(this.API_PATH + '/' + account.id, account)
+    return this.http.patch<Account>(this.API_PATH + '/' + account.id, account);
   }
   public deleteAccount(id: string): Observable<{}> {
     return this.http.delete<{}>(this.API_PATH + '/' + id);
+  }
+
+  public deleteAccounts(accountIds: string[]): Observable<{}> {
+    let results: Observable<{}>[] = [];
+
+    for (let id of accountIds) {
+      results.push(this.deleteAccount(id));
+    }
+    return forkJoin(results);
   }
 }

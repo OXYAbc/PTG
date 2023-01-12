@@ -18,6 +18,8 @@ import { AlertComponent } from 'src/app/@theme/alert/alert.component';
 export class ColumnsComponent {
   protected data: any;
   protected detailData?: Observable<Account>;
+  protected selectMode: boolean = false;
+  protected selectedItem: string[] = [];
 
   columnDef = [
     {
@@ -47,6 +49,15 @@ export class ColumnsComponent {
     this.service.getAccounts().subscribe((res) => (this.data = res));
     this.filteredColumnDef.push('viewMore');
   }
+  addItem(id: string) {
+    if (this.selectMode) {
+      if (this.selectedItem.includes(id)) {
+        this.selectedItem = this.selectedItem.filter((e) => e !== id);
+      } else {
+        this.selectedItem.push(id);
+      }
+    }
+  }
 
   onShowDetails(element: number) {
     this.detailData = this.service.getAccount(element);
@@ -54,6 +65,16 @@ export class ColumnsComponent {
     dialogRef.componentInstance?.saveEdit.subscribe((res) =>
       this.service.updateAccountData(res).subscribe()
     );
-    dialogRef.componentInstance?.deleteAccount.subscribe(res=> this.service.deleteAccount(res).subscribe())
+    dialogRef.componentInstance?.deleteAccount.subscribe((res) =>
+      this.service.deleteAccount(res).subscribe()
+    );
+  }
+  onMultiselect() {
+    this.selectMode = !this.selectMode;
+    if (!this.selectMode) this.selectedItem = [];
+  }
+  deleteSelected() {
+    if (this.selectedItem.length > 0)
+      this.service.deleteAccounts(this.selectedItem).subscribe(res=> console.log(res));
   }
 }

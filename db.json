@@ -295,7 +295,7 @@
       "id": 3,
       "account_number": "1111111111",
       "account_type": "checking",
-      "balance": 500,
+      "balance": "50000",
       "owner_name": "John Kowalski"
     },
     {

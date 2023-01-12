@@ -10,7 +10,7 @@ import { Account } from 'src/app/@core/account.model';
 })
 export class AlertComponent {
   protected editMode: boolean = false;
-  protected account!: Account;
+  protected account: Partial<Account> = {};
   protected editCopy: Partial<Account> = {};
   public saveEdit = new EventEmitter();
   public deleteAccount = new EventEmitter();
@@ -31,6 +31,8 @@ export class AlertComponent {
   }
   onSubmit() {
     this.saveEdit.emit(this.editCopy);
+    this.onClose();
+
   }
   onDelete() {
     this.deleteAccount.emit(this.account.id);
