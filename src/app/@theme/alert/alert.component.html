@@ -1,0 +1,32 @@
+<table>
+  <tbody>
+    <tr>
+      <td><strong>ID</strong></td>
+      <td>{{ (data | async)?.id }}</td>
+    </tr>
+    <tr>
+      <td><strong>Account Number</strong></td>
+      <td>{{ (data | async)?.account_number }}</td>
+    </tr>
+    <tr>
+      <td><strong>Account Type</strong></td>
+      <td>{{ (data | async)?.account_type }}</td>
+    </tr>
+
+    <tr>
+      <td><strong>Balance</strong></td>
+      <td>{{ (data | async)?.balance }}</td>
+    </tr>
+    <tr>
+      <td><strong>Owner</strong></td>
+      <td>{{ (data | async)?.owner_name }}</td>
+    </tr>
+  </tbody>
+</table>
+<div class="actions mt-4">
+  <button class="btn btn-primary">Close</button>
+  <button class="btn btn-warning">Edit</button>
+  <button class="btn btn-danger">Delete</button>
+
+
+</div>
