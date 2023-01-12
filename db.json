@@ -213,30 +213,66 @@
       "label": "Germany",
       "code": "DE",
       "items": [
-        { "label": "Berlin", "value": "Berlin" },
-        { "label": "Frankfurt", "value": "Frankfurt" },
-        { "label": "Hamburg", "value": "Hamburg" },
-        { "label": "Munich", "value": "Munich" }
+        {
+          "label": "Berlin",
+          "value": "Berlin"
+        },
+        {
+          "label": "Frankfurt",
+          "value": "Frankfurt"
+        },
+        {
+          "label": "Hamburg",
+          "value": "Hamburg"
+        },
+        {
+          "label": "Munich",
+          "value": "Munich"
+        }
       ]
     },
     {
       "label": "USA",
       "code": "US",
       "items": [
-        { "label": "Chicago", "value": "Chicago" },
-        { "label": "Los Angeles", "value": "Los Angeles" },
-        { "label": "New York", "value": "New York" },
-        { "label": "San Francisco", "value": "San Francisco" }
+        {
+          "label": "Chicago",
+          "value": "Chicago"
+        },
+        {
+          "label": "Los Angeles",
+          "value": "Los Angeles"
+        },
+        {
+          "label": "New York",
+          "value": "New York"
+        },
+        {
+          "label": "San Francisco",
+          "value": "San Francisco"
+        }
       ]
     },
     {
       "label": "Japan",
       "code": "JP",
       "items": [
-        { "label": "Kyoto", "value": "Kyoto" },
-        { "label": "Osaka", "value": "Osaka" },
-        { "label": "Tokyo", "value": "Tokyo" },
-        { "label": "Yokohama", "value": "Yokohama" }
+        {
+          "label": "Kyoto",
+          "value": "Kyoto"
+        },
+        {
+          "label": "Osaka",
+          "value": "Osaka"
+        },
+        {
+          "label": "Tokyo",
+          "value": "Tokyo"
+        },
+        {
+          "label": "Yokohama",
+          "value": "Yokohama"
+        }
       ]
     }
   ],
@@ -252,148 +288,134 @@
       "id": 2,
       "account_number": "0987654321",
       "account_type": "savings",
-      "balance": 2500.0,
+      "balance": 2500,
       "owner_name": "Jane Smith"
     },
     {
       "id": 3,
       "account_number": "1111111111",
       "account_type": "checking",
-      "balance": 500.0,
-      "owner_name": "John Smith"
+      "balance": 500,
+      "owner_name": "John Kowalski"
     },
     {
       "id": 4,
       "account_number": "2222222222",
       "account_type": "savings",
-      "balance": 1000.0,
+      "balance": 1000,
       "owner_name": "Jane Doe"
     },
     {
       "id": 5,
       "account_number": "3333333333",
       "account_type": "checking",
-      "balance": 2000.0,
+      "balance": 2000,
       "owner_name": "John Williams"
     },
     {
       "id": 6,
       "account_number": "4444444444",
       "account_type": "savings",
-      "balance": 3000.0,
+      "balance": 3000,
       "owner_name": "Jane Miller"
     },
     {
       "id": 7,
       "account_number": "5555555555",
       "account_type": "checking",
-      "balance": 500.0,
+      "balance": 500,
       "owner_name": "John Johnson"
     },
     {
       "id": 8,
       "account_number": "6666666666",
       "account_type": "savings",
-      "balance": 2000.0,
+      "balance": 2000,
       "owner_name": "Jane Taylor"
     },
     {
       "id": 9,
       "account_number": "7777777777",
       "account_type": "checking",
-      "balance": 1000.0,
+      "balance": 1000,
       "owner_name": "John Brown"
     },
     {
       "id": 10,
       "account_number": "8888888888",
       "account_type": "savings",
-      "balance": 1500.0,
+      "balance": 1500,
       "owner_name": "Jane Davis"
     },
     {
       "id": 11,
       "account_number": "9999999999",
       "account_type": "checking",
-      "balance": 750.0,
+      "balance": 750,
       "owner_name": "John Moore"
     },
     {
       "id": 12,
       "account_number": "0000000000",
       "account_type": "savings",
-      "balance": 2500.0,
+      "balance": 2500,
       "owner_name": "Jane Anderson"
     },
     {
       "id": 13,
       "account_number": "1231231231",
       "account_type": "checking",
-      "balance": 500.0,
+      "balance": 500,
       "owner_name": "John Wilson"
     },
     {
       "id": 14,
       "account_number": "4564564564",
       "account_type": "savings",
-      "balance": 1000.0,
+      "balance": 1000,
       "owner_name": "Jane Thomas"
     },
     {
       "id": 15,
       "account_number": "7897897897",
       "account_type": "checking",
-      "balance": 2000.0,
+      "balance": 2000,
       "owner_name": "John Harris"
     },
     {
       "id": 16,
       "account_number": "1471471471",
       "account_type": "savings",
-      "balance": 3000.0,
+      "balance": 3000,
       "owner_name": "Jane Martin"
     },
     {
       "id": 17,
       "account_number": "2582582582",
       "account_type": "checking",
-      "balance": 500.0,
+      "balance": 500,
       "owner_name": "John Thompson"
     },
     {
       "id": 18,
       "account_number": "3693693693",
       "account_type": "savings",
-      "balance": 2000.0,
+      "balance": 2000,
       "owner_name": "Jane Jackson"
     },
     {
       "id": 19,
       "account_number": "7171717171",
       "account_type": "checking",
-      "balance": 1000.0,
+      "balance": 1000,
       "owner_name": "John White"
     },
     {
       "id": 20,
       "account_number": "8282828282",
       "account_type": "savings",
-      "balance": 1500.0,
+      "balance": 1500,
       "owner_name": "Jane Harris"
-    },
-    {
-      "id": 21,
-      "account_number": "9393939393",
-      "account_type": "checking",
-      "balance": 750.0,
-      "owner_name": "John Martinez"
-    },
-    {
-      "id": 22,
-      "account_number": "0505050505",
-      "account_type": "savings",
-      "balance": 2500.0,
-      "owner_name": "Jane Robinson"
     }
   ]
 }

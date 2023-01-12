@@ -50,6 +50,10 @@ export class ColumnsComponent {
 
   onShowDetails(element: number) {
     this.detailData = this.service.getAccount(element);
-    this.dialog.open(AlertComponent, {data: this.detailData});
+    let dialogRef = this.dialog.open(AlertComponent, { data: this.detailData });
+    dialogRef.componentInstance?.saveEdit.subscribe((res) =>
+      this.service.updateAccountData(res).subscribe()
+    );
+    dialogRef.componentInstance?.deleteAccount.subscribe(res=> this.service.deleteAccount(res).subscribe())
   }
 }

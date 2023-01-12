@@ -1,32 +1,62 @@
-<table>
-  <tbody>
-    <tr>
-      <td><strong>ID</strong></td>
-      <td>{{ (data | async)?.id }}</td>
-    </tr>
-    <tr>
-      <td><strong>Account Number</strong></td>
-      <td>{{ (data | async)?.account_number }}</td>
-    </tr>
-    <tr>
-      <td><strong>Account Type</strong></td>
-      <td>{{ (data | async)?.account_type }}</td>
-    </tr>
+<ng-container *ngIf="!editMode; else edit">
+  <table>
+    <tbody>
+      <tr>
+        <td><strong>ID</strong></td>
+        <td>{{ account.id }}</td>
+      </tr>
+      <tr>
+        <td><strong>Account Number</strong></td>
+        <td>{{ account.account_number }}</td>
+      </tr>
+      <tr>
+        <td><strong>Account Type</strong></td>
+        <td>{{ account.account_type }}</td>
+      </tr>
 
-    <tr>
-      <td><strong>Balance</strong></td>
-      <td>{{ (data | async)?.balance }}</td>
-    </tr>
-    <tr>
-      <td><strong>Owner</strong></td>
-      <td>{{ (data | async)?.owner_name }}</td>
-    </tr>
-  </tbody>
-</table>
+      <tr>
+        <td><strong>Balance</strong></td>
+        <td>{{ account.balance }}</td>
+      </tr>
+      <tr>
+        <td><strong>Owner</strong></td>
+        <td>{{ account.owner_name }}</td>
+      </tr>
+    </tbody>
+  </table>
+</ng-container>
 <div class="actions mt-4">
-  <button class="btn btn-primary">Close</button>
-  <button class="btn btn-warning">Edit</button>
-  <button class="btn btn-danger">Delete</button>
-
-
+  <button class="btn btn-secondary" (click)="onClose()">Close</button>
+  <button class="btn btn-warning" *ngIf="!editMode" (click)="onEdit()">Edit</button>
+  <button class="btn btn-primary" *ngIf="editMode"  (click)="onSubmit()">save</button>
+  <button class="btn btn-danger" *ngIf="!editMode" (click)="onDelete()">Delete</button>
 </div>
+<ng-template #edit>
+  <form #form="ngForm">
+    <table>
+      <tbody>
+        <tr>
+          <td><strong>ID</strong></td>
+          <td><input type="text" name="id" class="form-control" [(ngModel)]="editCopy.id" disabled="true"></td>
+        </tr>
+        <tr>
+          <td><strong>Account Number</strong></td>
+          <td><input type="text" name="account_number" class="form-control" [(ngModel)]="editCopy.account_number"></td>
+        </tr>
+        <tr>
+          <td><strong>Account Type</strong></td>
+          <td><input type="text" name="account_type" class="form-control" [(ngModel)]="editCopy.account_type"></td>
+        </tr>
+  
+        <tr>
+          <td><strong>Balance</strong></td>
+          <td><input type="text" name="balance" class="form-control" [(ngModel)]="editCopy.balance"></td>
+        </tr>
+        <tr>
+          <td><strong>Owner</strong></td>
+          <td><input type="text" name="owner_name" class="form-control" [(ngModel)]="editCopy.owner_name"></td>
+        </tr>
+      </tbody>
+    </table>
+  </form>
+</ng-template>
