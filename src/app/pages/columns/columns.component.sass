@@ -1,0 +1,22 @@
+@import '../../../assets/colors'
+
+table
+    td,th 
+        text-align: center
+        white-space: nowrap
+        overflow: hidden
+        text-overflow: ellipsis
+        padding: 8px
+    td:first-child
+      border-radius: 12px 0 0 12px
+    td:last-child
+      border-radius: 0 12px 12px 0
+    .cdk-row:hover
+        background-color: $primary-hover
+    .cdk-row:hover .btn-primary
+        background-color: $bg-light
+        color: $primary
+.selected,.cdk-row:hover > .selected
+  background-color: $dark-grey
+  color: $primary
+
